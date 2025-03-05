@@ -25,12 +25,12 @@ public class PropertyController {
     }
 
     @PostMapping
-    public Property createProperty(@RequestParam Property property) {
+    public Property createProperty(@RequestBody Property property) {
         return propertyService.saveProperty(property);
     }
 
     @PutMapping("/{id}")
-    public Property updateProperty(@RequestParam Long id, @RequestParam Property property) {
+    public Property updateProperty(@RequestParam Long id, @RequestBody Property property) {
         return propertyService.updateProperty(id, property);
     }
 
