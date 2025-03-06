@@ -12,24 +12,26 @@ async function obtenerDatos() {
         const data = await response.json();
         document.getElementById("resultado").innerText = JSON.stringify(data, null, 2);
     } catch (error) {
-        console.error("Error obteniendo datos:", error);
-        document.getElementById("resultado").innerText = "Error al obtener datos.";
+       
     }
 }
 
 async function enviarDatos() {
-    const inputData = document.getElementById("inputData").value;
+    const inputDireccion = document.getElementById("inputDireccion").value;
+    const inputPrecio = parseFloat(document.getElementById("inputPrecio").value);  
+    const inputTamaño = parseFloat(document.getElementById("inputTamaño").value); 
+    const inputDescripcion = document.getElementById("inputDescripcion").value;
 
     try {
         const response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ mensaje: inputData })
+            body: JSON.stringify({ address: inputDireccion, price:inputPrecio, size:inputTamaño, description:inputDescripcion })
         });
 
         if (response.ok) {
             const result = await response.json();
-            document.getElementById("postResultado").innerText = `Respuesta: ${JSON.stringify(result)}`;
+            document.getElementById("postResultado").innerText = `La solicitud fue completada`;
         } else {
             document.getElementById("postResultado").innerText = "Error en la petición.";
         }
