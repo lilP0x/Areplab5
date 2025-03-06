@@ -14,11 +14,11 @@ public class PropertyService {
     private PropertyRepository propertyRepository;
 
     public List<Property> getAllProperties() {
-        return null;
+        return propertyRepository.findAll();
     }
 
     public Property getPropertyById(Long id) {
-        return (Property    )propertyRepository.findById(id).orElse(null);
+        return (Property)propertyRepository.findById(id).orElse(null);
     }
 
     public Property saveProperty(Property property) {
