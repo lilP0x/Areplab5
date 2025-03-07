@@ -30,12 +30,12 @@ public class PropertyController {
     }
 
     @PutMapping("/{id}")
-    public Property updateProperty(@RequestParam Long id, @RequestBody Property property) {
+    public Property updateProperty(@PathVariable Long id, @RequestBody Property property) {
         return propertyService.updateProperty(id, property);
     }
 
     @DeleteMapping("/{id}") 
-    public void deleteProperty(@RequestParam Long id) {
+    public void deleteProperty(@PathVariable Long id) {
         propertyService.deleteProperty(id);
     }
 }
