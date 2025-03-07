@@ -86,5 +86,5 @@
 
 # Model
 
-![alt text](foto_readme/model.png)
+![alt text](fotos_readme/model.png)
 
