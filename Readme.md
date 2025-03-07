@@ -80,4 +80,11 @@
 ![alt text](fotos_readme/controller.png)
 
 
-service 
+# Service 
+
+![alt text](fotos_readme/service.png)
+
+# Model
+
+![alt text](model.png)
+
